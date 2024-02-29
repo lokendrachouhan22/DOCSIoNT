@@ -112,10 +112,44 @@ nav {
     margin-right: 0;
     margin-bottom: 10px;
   }
+
+  .container {
+    padding: 0 10px; /* Adjust container padding for smaller screens */
+  }
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .nav_menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e9f1fc;
+    width: 100%;
+  }
 
+  .nav_menu.active {
+    display: flex;
+  }
 
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle::after {
+    content: '\2630'; /* Unicode character for hamburger icon */
+    font-size: 24px;
+  }
+
+  .nav_menu li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
 
 /* Header Styles */
 header {
@@ -160,6 +194,17 @@ header {
   text-align: justify; /* Justify text for a more organized appearance */
 }
 
+/* Media Queries for Scope Section */
+@media screen and (max-width: 768px) {
+  .Scope-heading {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .scope-content {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
 /* Topics Section Styles */
 #topics {
   font-size: 24px; /* Increase font size for topics heading */
@@ -182,35 +227,68 @@ header {
   padding-left: 20px; /* Add padding to the left of the list */
 }
 
+/* Media Queries for Topics Section */
+@media screen and (max-width: 768px) {
+  .topics-heading {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .topics-content {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
 /* Important Dates Styles */
 .Important-dates {
-  font-size: 24px; /* Increase font size for important dates heading */
-  margin-bottom: 20px; /* Add some space below the heading */
-  color: rgb(130, 164, 189); /* Match the color used in the Committees section */
-  text-align: left; /* Align the heading to the left */
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(130, 164, 189);
+  text-align: left;
 }
 
 .Important-content {
-  font-size: 18px; /* Increase font size for important dates content */
-  line-height: 1.8; /* Increase line spacing for better readability */
-  text-align: justify; /* Justify text for a more organized appearance */
-  background-color: #f8f9fa; /* Match the background color used in the Committees section */
-  /*padding: 40px 20px;*/ /* Add padding for spacing */
-  margin-top: 20px; /* Add spacing from the heading */
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .Important-list {
-  list-style-type: none; /* Remove bullet points from the list */
-  padding: 0; /* Remove default padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 .Important-list li {
-  margin-bottom: 10px; /* Add spacing between list items */
+  margin-bottom: 10px;
 }
 
 .Important-date {
-  font-weight: bold; /* Make the date text bold */
-  color: #4e54c8; /* Match the color used in the Committees section */
+  font-weight: bold;
+  color: #4e54c8;
+}
+
+.Submission-link {
+  color: #4e54c8;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border: 1px solid #4e54c8;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.Submission-link:hover {
+  background-color: #4e54c8;
+  color: #ffffff;
+}
+
+.Updated-text {
+  color: #888;
+  margin-left: 5px;
 }
 
 /* Committees Section Styles */
@@ -281,11 +359,4 @@ footer {
 
 .footer-content {
   font-size: 16px;
-}
-
-/* Media Queries */
-@media only screen and (max-width: 768px) {
-  .container {
-      padding: 0 10px; /* Adjust container padding for smaller screens */
-  }
 }
